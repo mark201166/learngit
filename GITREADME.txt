@@ -14,8 +14,17 @@
 
 
 ----与远程版本库关联
+必须先在github创建对应库
 1.git remote add origin git@github.com/mark201166/learngit.git --关联到远程版本库
 2.git push -u origin master  --把本地库的所有内容推送到远程库上 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。 git push origin master
+
+注：Git 提示fatal: remote origin already exists 错误解决办法
+1.先删除远程 Git 仓库 git remote rm origin
+2.再添加远程 Git 仓库 git remote add origin git@github.com:mark201166/maven.git
+3.如果执行 git remote rm origin 报错的话，我们可以手动修改gitconfig文件的内容 1. vi .git/config 2.把 [remote “origin”] 那一行删掉就好了。3.:wq 保存
+
+
+ 
 
 ---远程版本库关联到本地
 1.git clone git@github.com:michaelliao/gitskills.git
